@@ -34,8 +34,10 @@ class Family:
         return None
 
     def get_member(self, id):
+        for item in self._members:
+            item.id == id
         # fill this method and update the return
-        return None
+            return item
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
