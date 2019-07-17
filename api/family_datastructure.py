@@ -23,15 +23,16 @@ class Family:
 
     def add_member(self, member):
         member["id"]= self._generateId()
-        member["full_name"]= member["first_name"]+ self.last_name
+        member["full_name"]= member["first_name"]+" "+ self.last_name
         self._members.append(member)
         # fill this method and update the return
         return member
 
     def delete_member(self, id):
         # fill this method and update the return
-        self._members.remove()
-        return None
+        for item in self._members:
+            if item["id"] == id:
+                return self._members.remove(item)
 
     def update_member(self, id, member):
         # fill this method and update the return
@@ -39,9 +40,8 @@ class Family:
 
     def get_member(self, id):
         for item in self._members:
-            item.id == id
-        # fill this method and update the return
-            return item
+            if item["id"] == id:
+                return item
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
