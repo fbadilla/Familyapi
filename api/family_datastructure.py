@@ -22,11 +22,15 @@ class Family:
         return randint(0, 99999999)
 
     def add_member(self, member):
+        member["id"]= self._generateId()
+        member["full_name"]= member["first_name"]+ self.last_name
+        self._members.append(member)
         # fill this method and update the return
-        return None
+        return member
 
     def delete_member(self, id):
         # fill this method and update the return
+        self._members.remove()
         return None
 
     def update_member(self, id, member):
